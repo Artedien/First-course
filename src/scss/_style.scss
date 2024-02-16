@@ -1,0 +1,64 @@
+@import './mixins';
+
+// colors
+$white: #ffffff;
+$black: #000;
+$Pink: #c89afc;
+$Purple: #7c6afa;
+$BG: #0a0a0a;
+$Liner: #787878;
+
+// body
+body {
+  font-family: 'Roboto';
+  background-color: $BG;
+  color: $white;
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative;
+}
+
+.overlay {
+  min-height: 100vh;
+  opacity: 0;
+  background: $BG;
+  transition: opacity 0.3s, z-index 0.3s;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  &.active {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+// main
+main {
+  flex-grow: 1;
+}
+
+@import './ui/ui';
+@import './components/_header';
+@import './components/_footer';
+
+
+section {
+  padding:0;
+  @media (max-width: 48em) {
+  }
+  &._first {
+      padding: 5.7rem 0 9rem;
+      @media (max-width: 48em) {
+          padding: 2.6rem 0 10rem;
+      }
+  }
+}
