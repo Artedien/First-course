@@ -1,7 +1,7 @@
 function timer(id, days) {
 
     const deadLine = new Date().setDate(new Date().getDate() + days);
-    console.log(deadLine)
+
 
     function getRemainingTime(endtime) {
         const diff = endtime - new Date();
